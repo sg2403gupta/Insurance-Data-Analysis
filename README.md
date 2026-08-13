@@ -224,6 +224,9 @@ The Power BI report contains **6 analytical pages**.
 
 ## 1️⃣ Executive Overview
 
+<img width="1172" height="672" alt="Executive_Overview" src="https://github.com/user-attachments/assets/73433404-ce1f-490a-80e3-c1e6d3d13f69" />
+
+
 Provides a high-level view of portfolio performance.
 
 ### KPIs
@@ -259,6 +262,9 @@ Provides a high-level view of portfolio performance.
 
 ## 2️⃣ Customer Analysis
 
+<img width="1170" height="685" alt="Customer_Analysis" src="https://github.com/user-attachments/assets/5a9f2464-e8e1-44ef-ac27-e8f314efd516" />
+
+
 Focuses on customer demographics and segmentation.
 
 ### KPIs
@@ -284,6 +290,9 @@ Focuses on customer demographics and segmentation.
 ---
 
 ## 3️⃣ Claims Analysis
+
+<img width="1165" height="680" alt="Claim_Analysis" src="https://github.com/user-attachments/assets/d5ada81c-d77d-45b7-bdbd-cdd4829eaf5a" />
+
 
 Provides detailed analysis of claim exposure.
 
@@ -319,6 +328,9 @@ Provides detailed analysis of claim exposure.
 
 ## 4️⃣ Transaction & Premium Analysis
 
+<img width="1178" height="669" alt="Transaction_ _Premium_Analysis" src="https://github.com/user-attachments/assets/cd1c522f-f809-43cd-bd74-ea9703517cd2" />
+
+
 Provides detailed transaction-level analysis.
 
 ### Analysis
@@ -343,6 +355,9 @@ The transaction table includes fields such as:
 
 ## 5️⃣ Risk Analysis
 
+<img width="1171" height="675" alt="Risk_Analysis" src="https://github.com/user-attachments/assets/c89d88d0-24ae-4d73-a0e1-ffd5e26b96f5" />
+
+
 Focuses on customer risk and claim exposure.
 
 ### KPIs
@@ -366,7 +381,10 @@ Focuses on customer risk and claim exposure.
 
 ---
 
-## 6️⃣ Customer Drill-Through
+## 6️⃣ Customer 360 Drill-Through
+
+
+<img width="1169" height="671" alt="Customer_360" src="https://github.com/user-attachments/assets/c0c74f3a-99d0-4365-8a9b-12d9a0c94f34" />
 
 The final page provides detailed customer-level investigation.
 
