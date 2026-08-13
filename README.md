@@ -94,10 +94,17 @@ Insurance_Data/
 ├── Dashboard/
 │   └── Insurance_Analytics.pbix
 │
+├── Screenshots/
+│   ├── Executive_Overview.png
+│   ├── Customer_Analysis.png
+│   ├── Claim_Analysis.png
+│   ├── Transaction_&_Premium_Analysis.png
+│   ├── Risk_Analysis.png
+│   └── Customer_360.png
+│
 └── README.md
-```
 
----
+```
 
 # 🧹 1. Data Cleaning & Preparation
 
