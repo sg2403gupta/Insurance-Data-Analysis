@@ -1,64 +1,88 @@
-Insurance Analytics — End-to-End Data Analysis & Power BI Dashboard
+# 🛡️ Insurance Analytics — End-to-End Data Analysis & Power BI
 
-An end-to-end Insurance Analytics project covering data preparation, SQL-based business analysis, and interactive Power BI reporting.
+> An end-to-end insurance analytics project using **Excel, SQL Server, and Power BI** to analyze premiums, claims, customers, risk, incidents, vendors, and geographic exposure.
 
-The project demonstrates a practical Data Analyst / Business Intelligence workflow:
+---
 
-Raw Data → Excel Cleaning → SQL Server → Business Analysis → Power BI → Interactive Dashboard → Customer Drill-Through
+## 📊 Dashboard Preview
 
-📌 Project Overview
+![Insurance Analytics Dashboard](Dashboard/dashboard-preview.png)
 
-This project analyzes insurance data to understand:
+> The Power BI report contains 6 interactive pages with slicers, KPIs, analytical visuals, transaction-level analysis, and customer drill-through.
 
-Premium and claim performance
-Claim approval and denial behavior
-Customer demographics and segmentation
-Insurance-type claim exposure
-Risk-segment performance
-Incident severity and claim behavior
-Geographic claim and premium concentration
-Customer premium and claim contribution
-Vendor claim-handling performance
-Claim reporting delays
-High-risk claim indicators
-Monthly claim trends
-Customer-level insurance and risk profiles
+---
 
-The project combines Excel, SQL Server, Power Query, Power BI, and DAX into one complete analytics workflow.
+## 🎯 Project Objective
 
-🎯 Business Objectives
+The objective of this project is to transform raw insurance data into actionable business insights through a complete data analytics workflow.
 
-The analysis is designed to answer practical insurance-business questions such as:
+The project focuses on:
 
-How much premium has been collected?
-What is the total claim exposure?
-What percentage of claims are approved or denied?
-Which insurance types generate the highest claim exposure?
-Which risk segments contribute the most claims?
-Which states and cities have the highest claim exposure?
-How does incident severity affect claim amounts?
-Which customer segments contribute the most premium and claims?
-Which vendors handle the highest claim volumes and values?
-Are claims being reported unusually late?
-Which claims may require additional risk review?
-How do claim amounts change month over month?
-Which customers have unusually high claim exposure?
-How can a manager drill from portfolio-level metrics to an individual customer?
-🗂️ Project Structure
+* Premium and claim performance
+* Claim approval and denial analysis
+* Customer segmentation
+* Risk analysis
+* Insurance-type performance
+* Incident severity
+* Geographic claim exposure
+* Customer and vendor analytics
+* Monthly claim trends
+* Customer-level investigation
+
+---
+
+## 🔄 End-to-End Workflow
+
+```text
+Raw Data
+   ↓
+Excel Data Cleaning
+   ↓
+Data Validation
+   ↓
+SQL Server
+   ↓
+Business & Advanced SQL Analysis
+   ↓
+Power BI Data Modeling
+   ↓
+DAX Measures & KPIs
+   ↓
+Interactive Dashboard
+   ↓
+Customer Drill-Through
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Category           | Tools                        |
+| ------------------ | ---------------------------- |
+| Data Cleaning      | Microsoft Excel, Power Query |
+| Database           | Microsoft SQL Server         |
+| Query Language     | T-SQL                        |
+| BI & Visualization | Microsoft Power BI           |
+| Calculations       | DAX                          |
+| Data Modeling      | Power BI                     |
+| Version Control    | Git & GitHub                 |
+
+---
+
+# 📁 Project Structure
+
+```text
 Insurance_Data/
-│
-├── Cleaned_Data/
-│   ├── employee_data_cleaned.xlsx
-│   ├── insurance_data_cleaned.xlsx
-│   └── vendor_data_cleaned.xlsx
-│
-├── Dashboard/
-│   └── Power BI dashboard/report files
 │
 ├── Dataset/
 │   ├── employee_data.xlsx
 │   ├── insurance_data.xlsx
 │   └── vendor_data.xlsx
+│
+├── Cleaned_Data/
+│   ├── employee_data_cleaned.xlsx
+│   ├── insurance_data_cleaned.xlsx
+│   └── vendor_data_cleaned.xlsx
 │
 ├── SQL/
 │   ├── Creating-Database-and-View-All-Data.sql
@@ -67,665 +91,500 @@ Insurance_Data/
 │   ├── Customer & Vendor Analytics.sql
 │   └── Advanced_SQL_Anlytics_.sql
 │
+├── Dashboard/
+│   └── Insurance_Analytics.pbix
+│
 └── README.md
-🔄 Analytics Workflow
-Raw Dataset
-     ↓
-Excel Data Cleaning
-     ↓
-Data Validation & Quality Checks
-     ↓
-SQL Server Import
-     ↓
-Business & Advanced SQL Analysis
-     ↓
-Power BI Data Modeling
-     ↓
-DAX Measures & KPIs
-     ↓
-Interactive Dashboard
-     ↓
-Customer Drill-Through & Business Insights
-🧹 1. Data Preparation — Excel
+```
 
-The raw datasets are maintained separately from the cleaned datasets.
+---
 
-Raw datasets
-insurance_data.xlsx
-employee_data.xlsx
-vendor_data.xlsx
-Cleaned datasets
-insurance_data_cleaned.xlsx
-employee_data_cleaned.xlsx
-vendor_data_cleaned.xlsx
+# 🧹 1. Data Cleaning & Preparation
 
-The cleaned files are used as the analysis-ready layer before loading the data into SQL Server and Power BI.
+The raw datasets were first prepared using **Microsoft Excel**.
 
-The project separates raw data from cleaned data so that the original source remains preserved and the transformation stage is reproducible.
+### Data Preparation Activities
 
-🗄️ 2. SQL Server Analysis
+* Data type validation
+* Missing-value checks
+* Duplicate checks
+* Date validation
+* Numeric field validation
+* Premium and claim validation
+* Preparation of analysis-ready datasets
 
-SQL Server is used for data validation, business analysis, customer/vendor analysis, claims analysis, risk analysis, and advanced analytical queries.
+The cleaned datasets were then used for SQL Server analysis and Power BI reporting.
 
-The SQL work is divided into five scripts.
+---
 
-Creating-Database-and-View-All-Data.sql
+# 🗄️ 2. SQL Server Analysis
 
-This script focuses on initial data validation and quality checks, including:
+SQL Server was used to perform data validation and business-oriented analysis before visualization.
 
-Record counts
-Duplicate transaction IDs
-Duplicate policy numbers
-Missing-value checks
-Claim statistics
-Premium statistics
-Claim date range
-Available insurance types
-Negative premium/claim checks
-Invalid reporting dates
+## SQL Analysis Areas
 
-Example validation questions:
+### 🔹 Data Validation
 
--- Are there duplicate Transaction IDs?
+* Record counts
+* Duplicate transaction IDs
+* Duplicate policy numbers
+* Missing values
+* Negative premium/claim values
+* Date validation
+* Insurance-type validation
+* Claim and premium statistics
 
+### 🔹 Business KPIs
 
--- Are there duplicate Policy Numbers?
+* Total Premium
+* Total Claims
+* Total Customers
+* Total Policies
+* Average Premium
+* Average Claim
+* Approved Claims
+* Denied Claims
+* Claim Approval Rate
+* Claim Denial Rate
+* Average Customer Age
+* Loss Ratio
 
+### 🔹 Claims & Risk Analytics
 
--- Which columns contain NULL values?
+* Claims by insurance type
+* Claim exposure by risk segment
+* Claim severity analysis
+* State-level claim exposure
+* Approval rate by insurance type
+* Approval rate by state
+* Police report vs approval
+* Incident time analysis
+* Claim reporting delay
 
+### 🔹 Customer Analytics
 
--- Are there negative premium or claim amounts?
+* Top customers by premium
+* Top customers by claim amount
+* Customers with multiple claims
+* Customer risk analysis
+* Customer tenure analysis
+* Claims by age
+* Claims by education
+* Claims by social class
+* Claims by city
 
+### 🔹 Vendor Analytics
 
--- Are claims reported before the loss occurred?
-📊 3. Business KPIs
+* Claims handled by vendor
+* Total claim amount handled
+* Average claim amount
+* Vendor approval rate
+* High-value claims handled
+* High-risk customer claims
 
-Business KPIs.sql calculates core insurance KPIs, including:
+---
 
-Total premium collected
-Total claim amount
-Unique customers
-Total policies
-Average premium
-Average claim
-Approved vs. denied claims
-Claim approval percentage
-Claim denial percentage
-Maximum claim
-Minimum claim
-Maximum premium
-Minimum premium
-Average customer age
-Loss ratio
+# 🧠 3. Advanced SQL
 
-Example:
+The project also includes advanced SQL analysis using:
 
-SELECT
-    ROUND(
-        SUM(CLAIM_AMOUNT) * 100.0 /
-        NULLIF(SUM(PREMIUM_AMOUNT), 0),
-        2
-    ) AS LossRatio
-FROM Insurance;
-
-These measures form the analytical foundation for the Power BI executive and claims dashboards.
-
-⚠️ 4. Insurance Claims & Risk Analytics
-
-Insurance Claims & Risk Analytics.sql focuses on insurance-specific claims and risk questions.
-
-Insurance Analysis
-Claim volume by insurance type
-Claim amount by insurance type
-Claim frequency by insurance type
-State-level claim exposure
-Average claim by state
-Risk-segment claim analysis
-Loss ratio by risk segment
-Approval and denial rates by insurance type
-Approval rate by state
-Incident Analysis
-Claim exposure by incident severity
-Approval behavior by incident severity
-Injury vs. claim amount
-Police-report availability vs. approval rate
-Age-group claim behavior
-Employment-status claim behavior
-Incident time-of-day analysis
-Claim reporting delay
-
-The incident-hour analysis groups incidents into:
-
-Night
-Morning
-Afternoon
-Evening
-👥 5. Customer & Vendor Analytics
-
-Customer & Vendor Analytics.sql contains customer, vendor, and multi-table analysis.
-
-Customer Analytics
-
-The analysis covers:
-
-Total customers
-Top customers by claim amount
-Top customers by premium
-Customers with multiple claims
-Customers with high premiums and high claims
-Claim behavior by age
-Claim exposure by education level
-Claim exposure by city
-Customer tenure groups
-Loss ratio by social class
-
-Customer tenure is segmented into:
-
-New Customer        < 24 months
-Established         24–59 months
-Long-Term Customer  60+ months
-Vendor Analytics
-
-Vendor performance is evaluated using:
-
-Claims handled by vendor
-Total claim amount handled
-Average claim amount
-Claim approval rate
-Incident severity handled
-Vendors with high average claim values
-Vendors handling high-risk customers
-Vendors with high claim volume and high average claim value
-Multi-table Analysis
-
-The project also analyzes relationships between:
-
-Social class × insurance type
-Risk segment × customers
-Vendors × high-risk customers
-Vendors × claim volume × claim value
-
-This demonstrates practical use of JOIN, GROUP BY, HAVING, aggregation, and multi-dimensional analysis.
-
-🧠 6. Advanced SQL Analytics
-
-Advanced_SQL_Anlytics_.sql demonstrates advanced SQL techniques used for deeper analytical questions.
-
-Techniques Used
-Common Table Expressions (CTEs)
-Window functions
+```text
+CTEs
+JOINs
+Subqueries
+CASE
+GROUP BY
+HAVING
+Window Functions
 RANK()
 DENSE_RANK()
 ROW_NUMBER()
 LAG()
-Subqueries
-Conditional logic using CASE
 Aggregations
-Percentage calculations
-Running totals
-Month-over-month comparison
-Customer-level loss-ratio analysis
-Examples
-Insurance-Type Ranking
+Time-Series Analysis
+```
 
-Insurance types are ranked by total claim amount.
+### Examples of Advanced Analysis
 
-Top Customers Within Each Insurance Type
+* Ranking insurance types by claim exposure
+* Finding top customers within each insurance type
+* Calculating monthly running claims
+* Month-over-month claim comparison
+* Identifying high-loss customers
+* Identifying potentially high-risk claims
+* Detecting late claim reporting
 
-ROW_NUMBER() with PARTITION BY is used to identify the top customers for each insurance type.
+---
 
-Monthly Running Claims
+# 📈 4. Power BI Dashboard
 
-A cumulative claim amount is calculated using a window function.
+The Power BI report contains **6 analytical pages**.
 
-Month-over-Month Claim Comparison
+---
 
-LAG() is used to compare current-month claim exposure with the previous month.
+## 1️⃣ Executive Overview
 
-High-Loss Customers
+Provides a high-level view of portfolio performance.
 
-Customers whose total claims exceed their total premiums are identified.
+### KPIs
 
-High-Risk Claim Identification
+* Total Premium
+* Total Claim Amount
+* Total Customers
+* Total Transactions
+* Approved Claims
+* Claim Approval Rate
 
-Potentially high-risk claims are flagged using a combination of:
+### Analysis
 
-Claim amount
-Injury indicator
-Police-report availability
-Incident severity
-Late Claim Reporting
+* Premium Trend
+* Premium by Insurance Type
+* Claims by Insurance Type
+* Claim Approval Status
+* Premium by Risk Segment
+* Top Cities by Premium
 
-Claims reported more than seven days after the loss date are identified and the overall late-reporting percentage is calculated.
+### Example 2021 View
 
-📈 7. Power BI Dashboard
+| KPI             |    Value |
+| --------------- | -------: |
+| Total Premium   | $413.58K |
+| Total Claims    |  $78.18M |
+| Customers       |       5K |
+| Transactions    |       5K |
+| Approved Claims |       4K |
+| Approval Rate   |   95.16% |
 
-The Power BI report contains six analytical pages, progressing from executive-level monitoring to customer-level investigation.
+---
 
-The dashboard uses slicers, KPI cards, charts, tables, and drill-through navigation.
+## 2️⃣ Customer Analysis
 
-Page 1 — Executive Overview
+Focuses on customer demographics and segmentation.
 
-Provides a high-level view of insurance portfolio performance.
+### KPIs
 
-KPIs
-Total Premium Amount
-Total Claim Amount
-Total Customers
-Total Transactions
-Approved Claims
-Claim Approval Rate
-Visuals
-Premium Trend
-Premium by Insurance Type
-Claims by Insurance Type
-Claim Approval Status
-Premium by Risk Segment
-Top 5 Cities by Premium
-Filters
-Year
-Insurance Type
-Claim Status
-City
+* Total Customers
+* Average Age
+* Average Family Size
+* Average Tenure
+* Average Premium
 
-For the displayed 2021 view, the dashboard shows approximately:
+### Analysis
 
-$413.58K Total Premium
-$78.18M Total Claim Amount
-5K Customers
-5K Transactions
-4K Approved Claims
-95.16% Claim Approval Rate
-Page 2 — Customer Analysis
+* Customers by Age Group
+* Employment Distribution
+* Social Class
+* Education Profile
+* Family Size
+* Customer Risk Distribution
+* Claims by Risk Segment
+* Premium Contribution by Social Class
+* Customers by City
 
-Focuses on customer demographics, segmentation, and behavior.
+---
 
-KPIs
-Total Customers
-Average Customer Age
-Average Family Size
-Average Tenure
-Average Premium Amount
-Visuals
-Customers by Age Group
-Customers by Employment
-Customers by Social Class
-Customer Education Profile
-Customers by Family Size
-Customer Risk Distribution
-Claims by Risk Segment
-Premium Contribution by Social Class
-Top Customers by City
+## 3️⃣ Claims Analysis
 
-The displayed overall view contains approximately 10K customers, with:
+Provides detailed analysis of claim exposure.
 
-Average age: 44
-Average family size: 4
-Average tenure: 63
-Average premium: $88.51
-Page 3 — Claims Analysis
+### KPIs
 
-Provides a detailed view of claim exposure and severity.
+* Total Premium
+* Total Claims
+* Approved Claims
+* Claim Approval Rate
+* Average Claim Amount
 
-KPIs
-Total Premium Amount
-Total Claim Amount
-Approved Claims
-Claim Approval Rate
-Average Claim Amount
-Visuals
-Claim Amount by Insurance Type
-Premium Exposure by Insurance Type
-Claim by Social Class
-Claim Exposure by Incident Severity
-Claim Severity Distribution
-Claims by Risk Segmentation
-Monthly Claim Exposure
+### Analysis
 
-The displayed overall view contains approximately:
+* Claims by Insurance Type
+* Premium Exposure by Insurance Type
+* Claims by Social Class
+* Claim Exposure by Incident Severity
+* Claim Severity Distribution
+* Claims by Risk Segment
+* Monthly Claim Exposure
 
-$885.09K Total Premium
-$165.64M Total Claim Amount
-9K Approved Claims
-94.97% Claim Approval Rate
-$16.56K Average Claim Amount
-Page 4 — Transaction & Premium Analysis
+### Overall Dashboard View
 
-Provides customer ranking and transaction-level visibility.
+| KPI             |    Value |
+| --------------- | -------: |
+| Total Premium   | $885.09K |
+| Total Claims    | $165.64M |
+| Approved Claims |       9K |
+| Approval Rate   |   94.97% |
+| Average Claim   |  $16.56K |
 
-KPIs
-Total Transactions
-Total Premium Amount
-Total Claim Amount
-Average Premium Amount
-Average Claim Amount
-Visuals
-Top 10 Customers by Premium
-Bottom 10 Customers by Premium
-Premium by Incident Severity
-Claims by Claim Amount Band
-Customers by Claim Status
-Transaction-level detail table
+---
+
+## 4️⃣ Transaction & Premium Analysis
+
+Provides detailed transaction-level analysis.
+
+### Analysis
+
+* Top 10 Customers by Premium
+* Bottom 10 Customers by Premium
+* Premium by Incident Severity
+* Claims by Claim Amount Band
+* Customers by Claim Status
+* Transaction-level details
 
 The transaction table includes fields such as:
 
-Transaction ID
-Customer ID
-Transaction Date
-Insurance Type
-Premium Amount
-Claim-related information
-Page 5 — Risk Analysis
+* Transaction ID
+* Customer ID
+* Transaction Date
+* Insurance Type
+* Premium Amount
+* Claim information
 
-Focuses on risk exposure and geographic concentration.
+---
 
-KPIs
-Total Customers
-High Risk Customers
-Total Claim Amount
-Average Claim Amount
-Visuals
-Customer Risk Distribution
-Claim Exposure by Risk Segment
-Risk × Claim Severity
-Top 10 States by Claim
-Top 10 States by Premium
-Claim by Incident Severity
-Top 10 Incident Locations by Claim Amount
-Premium Exposure by Insurance Type
-Top 5 Customers by City
+## 5️⃣ Risk Analysis
 
-The displayed report shows approximately 1K high-risk customers and provides a comparison of claim exposure across Low, Medium, and High risk segments.
+Focuses on customer risk and claim exposure.
 
-Page 6 — Customer Drill-Through
+### KPIs
 
-The final page provides a customer-level investigation view.
+* Total Customers
+* High-Risk Customers
+* Total Claim Amount
+* Average Claim Amount
 
-For a selected customer, the report displays:
+### Analysis
 
-Customer Profile
-Customer ID
-Age
-Education
-City
-Employment Status
-Marital Status
-Family Size
-Claim Status
-Insurance Profile
-Insurance Type
-Policy Effective Date
-Loss Date
-Premium Amount
-Claim Amount
-Customer Risk Segment
-Risk Segment
-Claim Severity
-Claim Status
-Risk Profile
-Incident Location
-Incident Severity
-Police Report Availability
-Incident Time
+* Customer Risk Distribution
+* Claim Exposure by Risk Segment
+* Risk × Claim Severity
+* Top States by Claim
+* Top States by Premium
+* Incident Severity
+* Top Incident Locations
+* Premium Exposure by Insurance Type
+* Customers by City
 
-The page also includes a Customer Premium vs Claim comparison.
+---
 
-This creates a drill-down path from portfolio-level analysis to an individual customer and incident profile.
+## 6️⃣ Customer Drill-Through
 
-📌 Key Analytical Areas
-Dimension	Analysis
-Financial	Premium, claims, averages, loss ratio
-Claims	Approval, denial, severity, frequency
-Risk	Risk segmentation and claim exposure
-Customer	Age, education, social class, employment, tenure
-Geographic	State, city, incident location
-Insurance	Insurance-type performance
-Vendor	Claim volume, value, approval rate
-Time	Monthly trends and reporting delays
-Operations	Transaction and claim-level analysis
-Drill-through	Customer-specific investigation
-🛠️ Technology Stack
-Data Preparation
-Microsoft Excel
-Power Query
-Database & SQL
-Microsoft SQL Server
-T-SQL
-Business Intelligence
-Microsoft Power BI
-DAX
-Power Query
-Power BI Data Modeling
-Analytical Techniques
-Aggregation
-Filtering
-Grouping
-Conditional logic
-CTEs
-Subqueries
-Window functions
-Ranking
-Time-series analysis
-Drill-through analysis
-KPI development
-📐 Core SQL Concepts Demonstrated
-SELECT
-WHERE
-GROUP BY
-HAVING
-ORDER BY
-CASE
-JOIN
-INNER JOIN
-COUNT
-COUNT DISTINCT
-SUM
-AVG
-MIN
-MAX
-NULLIF
-ROUND
-DATEDIFF
-YEAR
-MONTH
-CTE
-RANK
-DENSE_RANK
-ROW_NUMBER
-LAG
-Window Functions
-Subqueries
-📊 Power BI Concepts Demonstrated
-Data loading
-Data transformation
-Data modeling
-DAX measures
-KPI cards
-Slicers
-Bar charts
-Line charts
-Donut charts
-Treemap
-Matrix/table reporting
-Conditional formatting
-Drill-through
-Interactive filtering
-Dashboard navigation
-Customer-level detail analysis
-🔍 Data Quality & Validation
+The final page provides detailed customer-level investigation.
 
-Before analytical reporting, the project includes SQL checks for:
+### Customer Profile
 
-Duplicate transaction IDs
-Duplicate policy numbers
-Missing values
-Negative premium amounts
-Negative claim amounts
-Invalid reporting dates
-Claim date range
-Record counts
-Insurance-type validation
-Claim and premium statistics
+* Customer ID
+* Age
+* Education
+* City
+* Employment Status
+* Marital Status
+* Family Size
+* Claim Status
 
-This validation layer helps reduce the risk of producing misleading business insights from inconsistent records.
+### Insurance Profile
 
-⚠️ Data Interpretation & Source-Data Limitation
+* Insurance Type
+* Policy Effective Date
+* Loss Date
+* Premium Amount
+* Claim Amount
 
-The dashboard currently displays claim amounts that are substantially larger than premium amounts in the overall dataset.
+### Risk Profile
+
+* Risk Segment
+* Claim Severity
+* Claim Status
+* Incident Location
+* Incident Severity
+* Police Report
+* Incident Time
+
+The page also provides a **Customer Premium vs Claim** comparison.
+
+---
+
+# 💡 Key Business Insights
+
+The dashboard enables analysis of several important business patterns.
+
+### Insurance-Type Exposure
+
+Life insurance represents the highest claim exposure in the displayed claims analysis, followed by Property and Health insurance.
+
+### Risk Exposure
+
+The customer population is divided across Low, Medium, and High risk segments, allowing claim exposure to be compared against customer risk.
+
+### Geographic Exposure
+
+The dashboard identifies states and cities with the highest premium and claim concentrations.
+
+### Claim Severity
+
+Claims are analyzed across:
+
+* Minor Loss
+* Major Loss
+* Total Loss
+
+This helps identify how claim severity contributes to overall claim exposure.
+
+### Customer Segmentation
+
+Customer behavior can be analyzed by:
+
+* Age
+* Education
+* Employment
+* Social Class
+* Family Size
+* Risk Segment
+* Tenure
+
+---
+
+# ⚠️ Data Interpretation Note
+
+The dashboard currently shows claim amounts substantially higher than premium amounts in the overall dataset.
 
 For example:
 
-Total Premium Amount   → $885.09K
-Total Claim Amount     → $165.64M
+```text
+Total Premium  → $885.09K
+Total Claims   → $165.64M
+```
 
-This produces an unusually high claim-to-premium relationship.
+This creates an unusually high claim-to-premium relationship.
 
-Therefore, the monetary units and source-data definitions should be validated before using these figures to draw real-world insurance profitability conclusions.
+Therefore, the **monetary units and source-data definitions should be validated before using these figures to draw real-world insurance profitability conclusions**.
 
-This does not change the purpose of the project. The project primarily demonstrates the complete data analytics and business intelligence workflow, including:
+This project is primarily intended to demonstrate the complete:
 
-Data Cleaning
-     ↓
-SQL Analysis
-     ↓
-KPI Development
-     ↓
-Power BI Modeling
-     ↓
-Dashboard Design
-     ↓
-Risk & Claims Analysis
-     ↓
-Customer Drill-Through
+**Data Cleaning → SQL Analysis → Power BI Modeling → KPI Development → Dashboard Design → Risk & Claims Analysis → Customer Drill-Through**
 
-This limitation has been documented intentionally so that the analysis remains transparent and reproducible.
+workflow.
 
-🚀 How to Reproduce the Project
-Step 1 — Prepare the Data
+> If you notice the unusually high claim-to-premium relationship while reviewing the dashboard, this is a characteristic of the source dataset and has been documented intentionally for transparency.
+
+---
+
+# 📌 Key Skills Demonstrated
+
+### Data Analysis
+
+* Data Cleaning
+* Data Validation
+* Exploratory Data Analysis
+* Business Analysis
+
+### SQL
+
+* T-SQL
+* Joins
+* CTEs
+* Subqueries
+* Aggregations
+* Window Functions
+* Ranking
+* Time-Series Analysis
+
+### Power BI
+
+* Power Query
+* DAX
+* Data Modeling
+* KPI Development
+* Dashboard Design
+* Interactive Filtering
+* Drill-Through
+* Data Visualization
+
+### Business Analytics
+
+* Insurance Claims Analytics
+* Risk Analytics
+* Customer Analytics
+* Vendor Analytics
+* Geographic Analysis
+* Performance Monitoring
+
+---
+
+# 🚀 How to Use
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd Insurance_Data
+```
+
+### 2. Review the datasets
 
 Start with the files inside:
 
+```text
 Dataset/
+```
 
-Perform data cleaning and preparation using the cleaned datasets inside:
+### 3. Review the cleaned data
 
+```text
 Cleaned_Data/
-Step 2 — Load Data into SQL Server
+```
 
-Create the required tables and import the cleaned datasets into SQL Server.
+### 4. Run the SQL scripts
 
-Run:
+Open the scripts in **SQL Server Management Studio (SSMS)** and execute them in the appropriate order.
 
-SQL/Creating-Database-and-View-All-Data.sql
+### 5. Open the Power BI report
 
-to perform initial data validation.
+Open:
 
-Step 3 — Run Business Analysis
+```text
+Dashboard/Insurance_Analytics.pbix
+```
 
-Execute the SQL scripts:
+Use the slicers and drill-through functionality to explore the analysis.
 
-SQL/Business KPIs.sql
+---
 
+# 📊 Project Outcome
 
-SQL/Insurance Claims & Risk Analytics.sql
+This project demonstrates a complete **end-to-end Data Analyst workflow**:
 
-
-SQL/Customer & Vendor Analytics.sql
-
-
-SQL/Advanced_SQL_Anlytics_.sql
-
-These scripts progressively move from basic validation and KPIs to advanced analytical queries.
-
-Step 4 — Open Power BI
-
-Open the Power BI report from:
-
-Dashboard/
-
-Review the report pages in this order:
-
-1. Executive Overview
-2. Customer Analysis
-3. Claims Analysis
-4. Transaction & Premium Analysis
-5. Risk Analysis
-6. Customer Drill-Through
-💼 Business Value
-
-This project demonstrates how raw insurance data can be transformed into actionable business intelligence.
-
-The analysis supports:
-
-Portfolio monitoring
-Claims management
-Risk assessment
-Customer segmentation
-Vendor performance analysis
-Geographic exposure analysis
-Claim severity analysis
-Operational analysis
-Customer-level investigation
-
-The final Power BI report allows decision-makers to move from:
-
-High-Level KPIs → Segment Analysis → Claims Analysis → Risk Analysis → Transaction Details → Individual Customer Investigation
-
-📁 Repository Organization
-
-The repository separates each stage of the analytics lifecycle:
-
-Dataset/
-    Raw source files
-
-
-Cleaned_Data/
-    Analysis-ready files
-
-
-SQL/
-    Data validation
-    Business KPIs
-    Claims & risk analytics
-    Customer & vendor analytics
-    Advanced SQL analytics
-
-
-Dashboard/
-    Power BI reporting layer
-
-
-README.md
-    Project documentation
-
-This structure makes the project easier to understand, review, reproduce, and maintain.
-
-👨‍💻 Skills Demonstrated
-Data Cleaning
-Data Validation
-Exploratory Data Analysis
-SQL Analytics
+```text
+Raw Data
+    ↓
+Excel Cleaning
+    ↓
+SQL Server
+    ↓
+Business Analysis
+    ↓
 Advanced SQL
-T-SQL
-CTEs
-Window Functions
-KPI Development
-DAX
-Power Query
+    ↓
 Power BI
-Data Visualization
-Business Intelligence
-Risk Analytics
-Claims Analytics
-Customer Analytics
-Vendor Analytics
-Dashboard Design
-Drill-through Reporting
-⭐ Project Summary
+    ↓
+DAX & KPIs
+    ↓
+Interactive Dashboard
+    ↓
+Customer-Level Insights
+```
 
-Insurance Analytics is an end-to-end business intelligence project combining Excel data preparation, SQL Server analytics, and Power BI dashboarding to analyze insurance premiums, claims, customers, vendors, risk, incidents, and geographic exposure.
+The final solution transforms raw insurance data into an interactive business intelligence report that can support **claims monitoring, risk analysis, customer segmentation, geographic analysis, and operational decision-making**.
 
-The project demonstrates a complete analyst workflow:
+---
 
-Raw Data → Cleaned Data → Validated Database → Analytical SQL → Power BI Modeling → Interactive Dashboard → Customer-Level Drill-Through.
+## 👨‍💻 Author
+
+**Shubham Gupta**
+
+**Data Analyst | SQL | Excel | Power BI | Python**
+
+Interested in **Data Analytics, Business Intelligence, and Data-driven Decision Making**.
+
+---
+
+⭐ If you find this project useful, consider giving the repository a star.
