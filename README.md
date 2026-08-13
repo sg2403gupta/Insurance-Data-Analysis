@@ -2,16 +2,6 @@
 
 > An end-to-end insurance analytics project using **Excel, SQL Server, and Power BI** to analyze premiums, claims, customers, risk, incidents, vendors, and geographic exposure.
 
----
-
-## 📊 Dashboard Preview
-
-![Insurance Analytics Dashboard](Dashboard/dashboard-preview.png)
-
-> The Power BI report contains 6 interactive pages with slicers, KPIs, analytical visuals, transaction-level analysis, and customer drill-through.
-
----
-
 ## 🎯 Project Objective
 
 The objective of this project is to transform raw insurance data into actionable business insights through a complete data analytics workflow.
